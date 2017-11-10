@@ -8,6 +8,12 @@ This is the first version.  When asked for originally recording graph karaoke vi
 the data munging requirements of producing a video.  Hence this work is a product of laziness, as a result, please use
 with care.  We are not liable for bad singing in any way if you so choose to sing along. ; )
 
+Here is a video demo of our Graph Karaoke in action!
+The user only enters the name of the artist and song.  Everything else is automated.
+
+https://www.youtube.com/watch?v=hDIcgyMdZuI
+
+
 PS. This work is inspired  by Rik Van Bruggen @rvanbruggen
 
 http://blog.bruggen.com/2015/01/graph-karaoke-using-natural-language.html
@@ -97,6 +103,28 @@ python3 run_first_views.py
 
 python3 run_second_open_newbroswer.py
 ```
+
+
+== Things to do
+
+
+* [ ] Add more inline code documetation.
+
+* [ ] Add Twillo SMS capability
+
+
+
+
+== Known Issues:
+ Lyrics are not synchronized with the playing of the song on youtube.
+
+ Automation is driven by selenium webdriver. So any key or mouse  movement after the song selection is initialized
+ might cause unexpected behavior.
+
+
+
+
+
 == MIT License
 Copyright 2017 SuprFanz
 
