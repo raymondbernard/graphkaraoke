@@ -77,11 +77,16 @@ print(NEO4J_PATH)
 ```
 == Import Chrome configuration
 
+Install a chrome plugin for allowing all pages to be iframed
+
+https://chrome.google.com/webstore/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe
+
 Download latest chromedirver from google and place into a working directory.
 
 https://sites.google.com/a/chromium.org/chromedriver/downloads
 
 Open run_second_open_newbrowser.py and edit the below!
+
 
 ```
 #Please point the app to your local chrome profile!
@@ -114,14 +119,11 @@ python3 run_second_open_newbroswer.py
 
 
 
-
 == Known Issues:
  Lyrics are not synchronized with the playing of the song on youtube.
 
  Automation is driven by selenium webdriver. So any key or mouse  movement after the song selection is initialized
  might cause unexpected behavior.
-
-
 
 
 
@@ -135,3 +137,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+Written by Ray Bernard
+ray@suprfanz.com
+and Jen Webb jen@suprfanz.com
