@@ -1,0 +1,6 @@
+neo4j-driver
+pylyrics3
+selenium
+flask
+
+

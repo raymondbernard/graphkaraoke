@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuprFanz presents Graph Karaoke powered by Neo4j</title>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+<div id="overlay" class="loading"></div>
+<div id="preloader" class="loading">
+    <img src="/static/img/cy.png" alt="Cy">
+    <img src="/static/img/suprfanz.png" alt="Cy">
+    <h4>presents</h4>
+    <h2>Graph Karaoke</h2>
+    <p>Powered by Neo4j</p>
+</div>
+<div class="header">
+    <a href="/" title="SuprFanz Logo" class="brand-logo white center-on-small-only" id="logoarea">
+        <div id="logo"><img src="/static/img/sfsitelogo.png" id="sf-logo" alt="SuprFanz Logo"></div>
+    </a>
+        <h1>Graph Karaoke</h1>
+    <a href="http://www.neo4j.com" target="_blank" title="Neo4j Logo" id="neo4j"><h2>Powered by Neo4j </h2>
+        <img src="/static/img/neo4jlogo.png" id="sf-logo" alt="Neo4j Logo">
+    </a>
+</div>
+<div class="container">
+
+    <div id="song_lyrics" class="column">
+        <h4>{{ artist }}</h4>
+        <h3>{{ song_title }}</h3>
+        <p>{{ song_lyrics }}</p>
+    </div>
+    <div id="song_form_div" class="column">
+        <form name="song_form" id="song_form" method="post" action="/" enctype="application/x-www-form-urlencoded">
+            <p style="text-align:left;"><label>Artist <input name="artist" type="text" required></label></p>
+            <p style="text-align:left;"><label>Song Title <input name="song_title" type="text" required></label></p>
+            <button id="submit" type="submit">Submit</button>
+            <button id="reset" type="reset" onclick="window.location.href='/';">Reset</button>
+        </form>
+    </div>
+    <div class="column">
+        <iframe sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation allow-presentation"
+                src="http://www.youtube.com" id="youtube_iframe"></iframe>
+    </div>
+    <div class="column" id="neo4j_div">
+
+        <iframe sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation" src="http://localhost:7474/"
+                id="neo4j_iframe"></iframe>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        setTimeout(function () {
+            document.getElementById('overlay').removeAttribute('class');
+            document.getElementById('preloader').removeAttribute('class');
+        }, 3000);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+== Graph Karaoke Graph
+
+This is the start of a project that will allow you to create a Graph Karaoke Kiosk using python, Neo4j, and youtube.
+The flask application allows opening a flask browser window allowing to input a song into the machine.  Lyrics are fetched
+from the pylyrics3 python package and stored in Neo4j. The application will search youtube for the song and play it while displaying the lyrics.  This app builds the graph of the song using a second browser.  Once this is done, it will open a new browser and build up the lyrics to produce the results neo4j graph karaoke results.
+
+This is the first version.  When asked for originally recording graph karaoke video we instead build a system which eliminates
+the data munging requirements of producing a video.  Hence this work is a product of laziness, as a result, please use
+with care.  We are not liable for bad singing in any way if you so choose to sing along. ; )
+
+PS. This work is inspired  by Rik Van Bruggen @rvanbruggen
+
+http://blog.bruggen.com/2015/01/graph-karaoke-using-natural-language.html
+
+https://neo4j.com/blog/contributor/rik-van-bruggen/
+read more:
+
+
+== Pre requisites
+
+You'll need to have the following installed:
+
+```
+Neo4j 3.X
+Python  3.6.0 recommended
+Flask
+setup a python virtual environment
+```
+
+== Step 1-  Download Python 3.6
+```
+https://www.python.org/downloads/release/python-363
+```
+
+== Step 2 - Install Python step by step :
+
+```
+http://www.elinuxbook.com/install-python-3-6-on-ubuntu-16-04/
+```
+
+== Step 3 - Setup virtual python environment
+```
+http://python-guide-cn.readthedocs.io/en/latest/dev/virtualenvs.html
+
+```
+
+
+== Step 4 - Install Python package requirements
+```
+/myproject/pip install -r requirements
+```
+
+== Step 5 - Setup Neo4j (Your Graph Database)
+
+```
+https://neo4j.com/sandbox-v2/
+```
+
+Open  `config.py` and change the setup with your unique configuration details of your neo4j server IP
+and credentials.
+
+```
+NEO4J_IP = '198.168.XXX.XXX'
+NEO4J_PASSWORD = 'MY-PASSWORD'
+NEO4J_PATH = 'C:/Users/<UserName>/PATH/neo4j-enterprise-3.2.0/import/'
+
+print(NEO4J_IP)
+print(NEO4J_PASSWORD)
+print(NEO4J_PATH)
+
+```
+== Import Chrome configuration
+
+Download latest chromedirver from google and place into a working directory.
+
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+Open run_second_open_newbrowser.py and edit the below!
+
+```
+#Please point the app to your local chrome profile!
+chrome_options.add_argument("user-data-dir=C:\\Users\<YOURUSERNAME>\AppData\Local\Google\Chrome\\User2 Data")
+
+#Point to the downloaded driver
+
+self.driver = webdriver.Chrome('C:\\Users\\<YOURUSERNAME>\\Downloads\\chromedriver_win32\\chromedriver.exe',
+                                       chrome_options=chrome_options)
+```
+== Run Graph Karaoke
+
+Just run the two below scripts in order, locally using your IDE.
+This application is designed to be run locally as a kiosk by the way :)
+
+
+```
+python3 run_first_views.py
+
+python3 run_second_open_newbroswer.py
+```
+== MIT License
+Copyright 2017 SuprFanz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
